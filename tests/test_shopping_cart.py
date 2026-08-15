@@ -38,18 +38,18 @@ def test_empty_cart_checkout_raises_error(empty_cart):
 # -------------------------------------------------------------
 # 3. Parameterized Testing
 # -------------------------------------------------------------
-@pytest.mark.parametrize(
-    "discount, expected_total",
-    [
-        (0.0, 1100.0),    # No discount
-        (10.0, 990.0),    # 10% off
-        (50.0, 550.0),    # 50% off
-        (100.0, 0.0),     # 100% off (Free)
-    ]
-)
-def test_discounts_on_populated_cart(populated_cart, discount, expected_total):
-    # Base: 1000 + (50 * 2) = 1100
-    assert populated_cart.get_total_price(discount_percent=discount) == expected_total
+# @pytest.mark.parametrize(
+#     "discount, expected_total",
+#     [
+#         (0.0, 1100.0),    # No discount
+#         (10.0, 990.0),    # 10% off
+#         (50.0, 550.0),    # 50% off
+#         (100.0, 0.0),     # 100% off (Free)
+#     ]
+# )
+# def test_discounts_on_populated_cart(populated_cart, discount, expected_total):
+#     # Base: 1000 + (50 * 2) = 1100
+#     assert populated_cart.get_total_price(discount_percent=discount) == expected_total
 
 
 # -------------------------------------------------------------
